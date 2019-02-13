@@ -289,6 +289,245 @@ scale-area	Boolean	false	µ±ÀïÃæµÄmovable-viewÉèÖÃÎªÖ§³ÖË«Ö¸Ëõ·ÅÊ±£¬ÉèÖÃ´ËÖµ¿É½«Ë
 
 
 
+///////////**·Ö¸îÏß**////////////
+cover-viewºÍcover-image
+×îºó¹ØÓÚcover-viewºÍcover-image
+ÕâÁ½¸öµÄÓÃ·¨Ê®·Ö¶à¶àÓÃÓÚÒ»Ğ©¹¦ÄÜµÄÑÜÉú
+¸²¸ÇÔÚÔ­Éú×é¼şÖ®ÉÏµÄÎÄ±¾ÊÓÍ¼£¬¿É¸²¸ÇµÄÔ­Éú×é¼ş°üÀ¨map¡¢video¡¢canvas¡¢camera¡¢live-player¡¢live-pusher£¬Ö»Ö§³ÖÇ¶Ì×cover-view¡¢cover-image£¬¿ÉÔÚcover-viewÖĞÊ¹ÓÃbutton¡£
+ÉÏÊôĞÔ
+cover-view
+
+scroll-top	Number / String		ÉèÖÃ¶¥²¿¹ö¶¯Æ«ÒÆÁ¿£¬½öÔÚÉèÖÃÁË overflow-y: scroll ³ÉÎª¹ö¶¯ÔªËØºóÉúĞ§£¨µ¥Î»px£¬2.4.0ÆğÖ§³Örpx£©	2.1.0
+aria-role	String		ÎŞÕÏ°­·ÃÎÊ£¬£¨½ÇÉ«£©±êÊ¶ÔªËØµÄ×÷ÓÃ	2.5.0
+aria-label	String		ÎŞÕÏ°­·ÃÎÊ£¬£¨ÊôĞÔ£©ÔªËØµÄ¶îÍâÃèÊö	2.5.0
+
+cover-image
+
+rc	String		Í¼±êÂ·¾¶£¬Ö§³ÖÁÙÊ±Â·¾¶¡¢ÍøÂçµØÖ·£¨1.6.0ÆğÖ§³Ö£©¡¢ÔÆÎÄ¼şID£¨2.2.3ÆğÖ§³Ö£©¡£Ôİ²»Ö§³Öbase64¸ñÊ½¡£	
+bindload	EventHandle		Í¼Æ¬¼ÓÔØ³É¹¦Ê±´¥·¢	2.1.0
+binderror	EventHandle		Í¼Æ¬¼ÓÔØÊ§°ÜÊ±´¥·¢	2.1.0
+aria-role	String		ÎŞÕÏ°­·ÃÎÊ£¬£¨½ÇÉ«£©±êÊ¶ÔªËØµÄ×÷ÓÃ	2.5.0
+aria-label	String		ÎŞÕÏ°­·ÃÎÊ£¬£¨ÊôĞÔ£©ÔªËØµÄ¶îÍâÃèÊö	2.5.0
+¶ÔÓÚÕâÀà²å¼şÎÒÁË½â²»ÉîÓ¦ÓÃµ±»áÔÚºóÃæ¹ØÓÚÓ²¼şÊ¹ÓÃ»á°üº¬´Ë¾Í²»Ò»Ò»×¸ÊöÁË~~~~
+
+
+Æä¿ÓµãÒ²Ê®·Ö¶àĞèÒª×¢Òâ~~~
+
+
+Bug & Tips
+tip: <cover-view>ºÍ<cover-image>µÄaria-role½ö¿ÉÉèÖÃÎªbutton£¬¶ÁÆÁÄ£Ê½ÏÂ²Å¿ÉÒÔµã»÷£¬²¢ÀÊ¶Á³ö¡°°´Å¥¡±£»Îª¿ÕÊ±¿ÉÒÔ¾Û½¹£¬µ«²»¿Éµã»÷
+tip: »ù´¡¿â 2.2.4 ÆğÖ§³Ö touch Ïà¹ØÊÂ¼ş£¬Ò²¿ÉÊ¹ÓÃ hover-class ÉèÖÃµã»÷Ì¬
+tip: »ù´¡¿â 2.1.0 ÆğÖ§³ÖÉèÖÃ scale rotate µÄ css ÑùÊ½£¬°üÀ¨ transition ¶¯»­
+tip: »ù´¡¿â 1.9.90 Æğ cover-view Ö§³Ö overflow: scroll£¬µ«²»Ö§³Ö¶¯Ì¬¸üĞÂ overflow
+tip: »ù´¡¿â 1.9.90 Æğ×îÍâ²ã cover-view Ö§³Ö position: fixed
+tip: »ù´¡¿â 1.9.0 ÆğÖ§³Ö²åÔÚ view µÈ±êÇ©ÏÂ¡£ÔÚ´ËÖ®Ç°Ö»¿ÉÇ¶Ì×ÔÚÔ­Éú×é¼şmap¡¢video¡¢canvas¡¢cameraÄÚ£¬±ÜÃâÇ¶Ì×ÔÚÆäËû×é¼şÄÚ¡£
+tip: »ù´¡¿â 1.6.0 ÆğÖ§³Öcss transition¶¯»­£¬transition-propertyÖ»Ö§³Ötransform (translateX, translateY)Óëopacity¡£
+tip: »ù´¡¿â 1.6.0 ÆğÖ§³Öcss opacity¡£
+tip: ÊÂ¼şÄ£ĞÍ×ñÑ­Ã°ÅİÄ£ĞÍ£¬µ«²»»áÃ°Åİµ½Ô­Éú×é¼ş¡£
+tip: ÎÄ±¾½¨Òé¶¼Ì×ÉÏcover-view±êÇ©£¬±ÜÃâÅÅ°æ´íÎó¡£
+tip: Ö»Ö§³Ö»ù±¾µÄ¶¨Î»¡¢²¼¾Ö¡¢ÎÄ±¾ÑùÊ½¡£²»Ö§³ÖÉèÖÃµ¥±ßµÄborder¡¢background-image¡¢shadow¡¢overflow: visibleµÈ¡£
+tip: ½¨Òé×Ó½Úµã²»ÒªÒç³ö¸¸½Úµã
+tip: Ä¬ÈÏÉèÖÃµÄÑùÊ½ÓĞ£ºwhite-space: nowrap; line-height: 1.2; display: block;
+bug: ×Ô¶¨Òå×é¼şÇ¶Ì× cover-view Ê±£¬×Ô¶¨Òå×é¼şµÄ slot ¼°Æä¸¸½ÚµãÔİ²»Ö§³ÖÍ¨¹ı wx:if ¿ØÖÆÏÔÒş£¬·ñÔò»áµ¼ÖÂ cover-view ²»ÏÔÊ¾
+///////////**·Ö¸îÏß**////////////
+///////////**·Ö¸îÏß**////////////
+///////////**·Ö¸îÏß**////////////
+»ù´¡ÄÚÈİ
+///////////**·Ö¸îÏß**////////////
+///////////**·Ö¸îÏß**////////////
+icon Í¼±ê
+
+±¾ÉíµÄÊôĞÔ
+ype	String		iconµÄÀàĞÍ£¬ÓĞĞ§Öµ£ºsuccess, success_no_circle, info, warn, waiting, cancel, download, search, clear
+size	Number / String	23px	iconµÄ´óĞ¡£¬µ¥Î»px£¨2.4.0ÆğÖ§³Örpx£©
+color	Color		iconµÄÑÕÉ«£¬Í¬cssµÄcolor
+aria-label	String		ÎŞÕÏ°­·ÃÎÊ£¬£¨ÊôĞÔ£©ÔªËØµÄ¶îÍâÃèÊö 2.5.0
+Æä±¾ÉíµÄÊôĞÔ¼òµ¥ºÃÈÏ¹ş¹ş¹ş¹ş¹ş¹ş¹şàÃ~~~
+Ğ¡Ğ¡µÄÁĞ×Ó
+eg£º
+wxml
+
+<view class="icon-group">
+  <icon wx:for="{{typeList}}" type="{{item}}" size="40"></icon>
+</view>
+
+js:
+
+data: {
+    typeList: ['success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search', 'clear']
+  },
+È»¶ø~Ò»¸ö×Ö³ó°¥¡¤¡¤¡¤¡¤¡¤¡¤¡¤¡¤ÏÖÔÚ¡¤¡¤¡¤¡¤ÓĞ¸ö´óµ¨µÄÏë·¨¡¤¡¤¡¤¡¤Íâ²¿Ó¦ÓÃ
+½«ÆäËûµØ·½µÄiconÓ¦ÓÃÖÁÎÒµÄĞ¡³ÌĞòÀïÃæºÙºÙ
+
+Ïê¼ûhttps://blog.csdn.net/m0_38082783/article/details/78873053
+
+ÒıÈëÍâ²¿×ÖÌå¿âiconfontµÄÍ¼±ê
+Ö±½ÓÊ¹ÓÃ°¢Àï°Í°ÍµÄÍøÂçÂ·¾¶
+Ñ¡ÔñiconfontÍ¼±ê
+ÏÈÔÚapp.wxssÈ«¾ÖÒıÈë
+
+ÉÏ´úÂë
+@font-face {
+  font-family: 'iconfont';  /* project id 518032 */
+  src: url('//at.alicdn.com/t/font_518032_t2q88z3jok8iwwmi.eot');
+  src: url('//at.alicdn.com/t/font_518032_t2q88z3jok8iwwmi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_518032_t2q88z3jok8iwwmi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_518032_t2q88z3jok8iwwmi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_518032_t2q88z3jok8iwwmi.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:60rpx;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*±¾ÏîÄ¿Ê¹ÓÃµÄ18¸öÍ¼±ê  */
+.icon-zhiding:before{content: '\e739';}
+.icon-zuojiantou:before{content: '\e736';}
+.icon-youjiantou:before{content: '\e735';}
+.icon-shangjiantou:before{content: '\e734';}
+.icon-xiajiantou1:before{content: '\e733';}
+.icon-xiajiantou:before{content: '\e6cc';}
+.icon-gengduotianchong:before{content: '\e67f';}
+.icon-erweima:before{content: '\e65f';}
+.icon-fenleiorguangchangorqita:before{content: '\e64f';}
+.icon-dibiao:before{content: '\e64d';}
+.icon-bangzhu:before{content: '\e64a';}
+.icon-xinfeng:before{content: '\e640';}
+.icon-duihuaxinxi:before{content: '\e639';}
+.icon-sousuo:before{content: '\e62f';}
+.icon-shouye:before{content: '\e62d';}
+.icon-shezhi:before{content: '\e62a';}
+.icon-shanchu:before{content: '\e629';}
+.icon-dianhua:before{content: '\e61b';}
+ÔÚÈ«¾ÖÉêÇëºó×ªÈëwxss
+<view>
+  <icon class="iconfont icon-zhiding"></icon>
+  <icon class="iconfont icon-zuojiantou"></icon>
+  <icon class="iconfont icon-youjiantou"></icon>
+  <icon class="iconfont icon-shangjiantou"></icon>
+  <icon class="iconfont icon-xiajiantou1"></icon>
+  <icon class="iconfont icon-xiajiantou"></icon>
+</view>
+<view>
+  <icon class="iconfont icon-gengduotianchong"></icon>
+  <icon class="iconfont icon-erweima"></icon>
+  <icon class="iconfont icon-fenleiorguangchangorqita"></icon>
+  <icon class="iconfont icon-dibiao"></icon>
+  <icon class="iconfont icon-bangzhu"></icon>
+  <icon class="iconfont icon-xinfeng"></icon>
+</view>
+<view>
+  <icon class="iconfont icon-duihuaxinxi"></icon>
+  <icon class="iconfont icon-sousuo"></icon>
+  <icon class="iconfont icon-shouye"></icon>
+  <icon class="iconfont icon-shezhi"></icon>
+  <icon class="iconfont icon-shanchu"></icon>
+  <icon class="iconfont icon-dianhua"></icon>
+</view>
+
+±àÒëÍê³É
+ÃÀ×Ì×Ì
+Í¬ÊÇÍ¼±êÍâÃæµÄ¾ÍÊÇºÃ¿´//¡¶//¡¤-¡¤//¡·//
+Í¬ÊÇÍ¼±ê»¹ÓĞÒ»ÖÖ·½·¨¸üÉ§
+Ö±½ÓÈ¥°¢Àï°Í°ÍµÄÊ¸Á¿Í¼¿âÈ¥ÕâÀï¾Í²»¶à×¸Êö
+Ïê¼û£ºhttps://www.jianshu.com/p/0d631d3b1983
+ÃÀ»¯UI±Ø±¸À²~~~
+
+///////////**·Ö¸îÏß**////////////
+textÎÄ±¾
+Õâ¸ö×é¼ş°¥~~~ÆäÊµÃ»ÓĞÊ²Ã´ºÃ¿´µÄ
+ÉÏÊôĞÔ
+/*ÎÄ±¾ÊôĞÔ*/ 
+selectable	Boolean	false	ÎÄ±¾ÊÇ·ñ¿ÉÑ¡	1.1.0
+space	String	false	ÏÔÊ¾Á¬Ğø¿Õ¸ñ	1.4.0
+decode	Boolean	false	ÊÇ·ñ½âÂë	1.4.0
+/*spaceÊôĞÔ*/
+ensp	ÖĞÎÄ×Ö·û¿Õ¸ñÒ»°ë´óĞ¡
+emsp	ÖĞÎÄ×Ö·û¿Õ¸ñ´óĞ¡
+nbsp	¸ù¾İ×ÖÌåÉèÖÃµÄ¿Õ¸ñ´óĞ¡
+µ«ÊÇ×¢Òâ
+ecode¿ÉÒÔ½âÎöµÄÓĞ &nbsp; &lt; &gt; &amp; &apos; &ensp; &emsp;
+¸÷¸ö²Ù×÷ÏµÍ³µÄ¿Õ¸ñ±ê×¼²¢²»Ò»ÖÂ¡£
+<text> ×é¼şÄÚÖ»Ö§³Ö <text> Ç¶Ì×¡£
+³ıÁËÎÄ±¾½ÚµãÒÔÍâµÄÆäËû½Úµã¶¼ÎŞ·¨³¤°´Ñ¡ÖĞ¡££¨ÌØ±ğÊÇÕâ¸ö¿ÉÒÔÓÃÓÚ±£»¤ÎÄµµ²»±»¸´ÖÆ¼«ÆäÍÆ¼ö£©
+¶ÔÕâ¸ö×é¼şÓÃ·¨»ù´¡£¬ÒıÉêµÄ¶«Î÷²»¶à¡£
+///////////**·Ö¸îÏß**////////////
+
+rich-text
+¸»ÎÄ±¾¡£
+Õâ¸öËùÎ½µÄ¸»ÎÄ±¾²å²å¼şÆäÊµÓ¦¸ÃÊÇËãÒ»ÖÖ²¹³äÔÚÏÔÊ¾ÎÄ±¾Ê±¶ÔÒıÓÃµÄÍ¼Æ¬½øĞĞ¸ü¸ÄÉÏÑùÊ½´¦Àí¡£
+
+ÉÏÊôĞÔ£º
+
+
+nodes	Array / String	[]	½ÚµãÁĞ±í / HTML String	1.4.0
+space	String		ÏÔÊ¾Á¬Ğø¿Õ¸ñ	2.4.1
+
+ÕâÀïÒ»¶¨Òª×¢ÒânodesµÄÀàĞÍÊÇstringÀàĞÍ
+µ«ÊÇ¶ÔÓÚ¿ª·¢À´Ëµ¸»ÎÄ±¾ÎÄ¼şÊ¹ÓÃºÜÉÙ¸»ÎÄ±¾±¾ÉíÆäÊµ¿ÉÒÔÖ±½Ó´Óºó¶Ë»ñÈ¡ÔÚÇ°¶ËÊ¹ÓÃÒ²´ó²¿·ÖÓÃÓÚ¶ÔÒıÓÃµÄÍ¼Æ¬½øĞĞ¸ñÊ½µÄ¸ü¸ÄÆäÊµÒ²¾ÍÕâÑù£¬±Ï¾¹ºÜ¶àÊ±ºòÎÒÃÇ¶¼ÊÇÒª´ÓºóÌ¨½ÓÊÜ¸»ÎÄ±¾µÄÊı¾İ£¬È»ºóÏÔÊ¾ÔÚĞ¡³ÌĞòÀïÃæ£¬¶øÓÃĞ¡³ÌĞò×ö¸»ÎÄ±¾±àÒëµÄ£¬ÓÖÊÇ±È½ÏÉÙµÄ£¬ËùÒÔ¾ÍºÜ¶àÇé¿öÊÇÖ±½Ó½«str·Å½øµ½Ò³ÃæµÄ£¬µ±È»£¡ÎÄµµ»¹ÊÇÒª¿´µÄ¡£
+
+ÒÀÈ»£¬ÉÏeg£º
+
+wxml£º
+
+<view>
+<rich-text nodes="{{myrich}}"></rich-text>
+</view>
+
+js£º
+
+data: {
+    myrich: ""
+  },
+  onShow: function () {
+    console.log("¿ªÊ¼³¢ÊÔ");
+    const that = this; 
+    var myrich = '<div class="colorred">hello,world</div>';
+    that.setData({myrich:myrich});
+  }
+×¢Òâ£ºÕâÀïÎªÊ²Ã´ÓÃdiv¿´wendangÕâÀïÊ¹ÓÃ<view>Æä±¾Éí²»Ö§³ÖËùÒÔ²ÅÓÃdiv¡£
+
+¶ÔÓÚÆäËû¹ØÓÚ¸»ÎÄ±¾µÄÍ¼Æ¬×ÔÊÊÓ¦ÎÊÌâÏê¼ûhttps://blog.csdn.net/qq_39425864/article/details/79999897
+///////////**·Ö¸îÏß**////////////
+progress ½ø¶ÈÌõ
+
+Õâ¸ö×é¼şÓÃ´¦¾Í±È½Ï´óÁË
+
+ÉÏÊôĞÔ£º
+
+ercent	Float	ÎŞ	°Ù·Ö±È0~100	
+show-info	Boolean	false	ÔÚ½ø¶ÈÌõÓÒ²àÏÔÊ¾°Ù·Ö±È	
+border-radius	Number / String	0	Ô²½Ç´óĞ¡£¬µ¥Î»px£¨2.4.0ÆğÖ§³Örpx£©	2.3.1
+font-size	Number / String	16	ÓÒ²à°Ù·Ö±È×ÖÌå´óĞ¡£¬µ¥Î»px£¨2.4.0ÆğÖ§³Örpx£©	2.3.1
+stroke-width	Number / String	6	½ø¶ÈÌõÏßµÄ¿í¶È£¬µ¥Î»px£¨2.4.0ÆğÖ§³Örpx£©	
+color	Color	#09BB07	½ø¶ÈÌõÑÕÉ« £¨ÇëÊ¹ÓÃ activeColor£©	
+activeColor	Color		ÒÑÑ¡ÔñµÄ½ø¶ÈÌõµÄÑÕÉ«	
+backgroundColor	Color		Î´Ñ¡ÔñµÄ½ø¶ÈÌõµÄÑÕÉ«	
+active	Boolean	false	½ø¶ÈÌõ´Ó×óÍùÓÒµÄ¶¯»­	
+active-mode	String	backwards	backwards: ¶¯»­´ÓÍ·²¥£»forwards£º¶¯»­´ÓÉÏ´Î½áÊøµã½Ó×Å²¥	1.7.0
+bindactiveend	EventHandle		¶¯»­Íê³ÉÊÂ¼ş	2.4.1
+aria-label	String		ÎŞÕÏ°­·ÃÎÊ£¬£¨ÊôĞÔ£©ÔªËØµÄ¶îÍâÃèÊö	2.5.0
+
+²âÊÔÒ»²¨ÉÏ´úÂë
+
+wxml£º
+<progress percent="{{name}}" show-info="true" activeColor = "blue" active="true"></progress>
+<button bindtap='btn'>µãÎÒ</button>
+
+js£º
+
+btn:function(){
+    this.setData({
+      name:50
+    })
+  }
+
+
+
+
+Ê£ÏÂµÄ¹¦ÄÜ¹ş¹ş¹ş¹ş¹ş£¬ĞèÒªµ÷ÓÃ¼´¿É~~~~~
 
 
 
